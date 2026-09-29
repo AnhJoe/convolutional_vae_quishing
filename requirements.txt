@@ -1,0 +1,27 @@
+# Data access
+gdown>=5.2
+
+# Core numerics and data handling
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+scikit-learn>=1.4
+
+# Images (QR code loading, resizing, decoding)
+Pillow>=10.0
+opencv-python-headless>=4.9
+
+# Modeling (VAE)
+torch>=2.2
+torchvision>=0.17
+
+# Visualization
+matplotlib>=3.8
+seaborn>=0.13
+
+# Utilities
+tqdm>=4.66
+
+# Notebooks
+ipykernel>=6.29
+jupyterlab>=4.1
