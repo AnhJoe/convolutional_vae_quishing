@@ -1,26 +1,19 @@
-# Data access
+# Data access (downloads the dataset in eda.ipynb)
 gdown>=5.2
 
 # Core numerics and data handling
 numpy>=1.26
-pandas>=2.1
-scipy>=1.11
-scikit-learn>=1.4
+pandas>=2.2
 
-# Images (QR code loading, resizing, decoding)
+# Images (reading the QR PNG files)
 Pillow>=10.0
-opencv-python-headless>=4.9
-
-# Modeling (VAE)
-torch>=2.2
-torchvision>=0.17
 
 # Visualization
 matplotlib>=3.8
 seaborn>=0.13
 
-# Utilities
-tqdm>=4.66
+# Styled, titled tables in the notebooks (pandas needs a recent jinja2)
+jinja2>=3.1.2
 
 # Notebooks
 ipykernel>=6.29
