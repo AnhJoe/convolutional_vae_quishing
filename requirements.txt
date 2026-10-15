@@ -1,4 +1,4 @@
-# Data access (downloads the dataset in eda.ipynb)
+# Data access (downloads the dataset in 1_eda.ipynb)
 gdown>=5.2
 
 # Core numerics and data handling
