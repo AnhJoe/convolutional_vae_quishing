@@ -104,3 +104,6 @@ envs/
 *.conda
 *.conda-lock
 /.quarto/
+
+# Model results and scores
+results/
