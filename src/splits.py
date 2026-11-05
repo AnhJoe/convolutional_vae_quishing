@@ -33,3 +33,24 @@ def grouped_split(groups, fracs=DEFAULT_FRACS, seed: int = DEFAULT_SEED) -> np.n
     frac_val = fracs[1] / (fracs[1] + fracs[2])
     split_of_group[rest] = 1 + (np.cumsum(sizes[rest]) / sizes[rest].sum() > frac_val).astype(int)
     return split_of_group[codes]
+
+
+def joint_class_split(frame, seed=DEFAULT_SEED):
+    """Assign each domain once, minimizing relative deviations from both class targets."""
+    group_counts = pd.crosstab(frame.domain, frame.label).reindex(columns=[0, 1], fill_value=0)
+    counts = group_counts.to_numpy()
+    target = np.array(DEFAULT_FRACS)[:, None] * counts.sum(axis=0)
+    remaining = target.copy()
+    rng = np.random.default_rng(seed)
+    # Fill training with the largest groups that fit both class quotas.
+    # Assign the other whole groups where they best close the remaining gaps.
+    order = np.lexsort((rng.random(len(counts)), -counts.sum(axis=1)))
+    assignments = np.empty(len(counts), dtype=int)
+    denominator = np.maximum(target, 1) ** 2
+    for rank, group in enumerate(order):
+        size = counts[group]
+        gain = ((2 * remaining - size) * size / denominator).sum(axis=1)
+        split = 0 if rank == 0 or (size <= remaining[0]).all() else gain.argmax()
+        assignments[group] = split
+        remaining[split] -= size
+    return frame.domain.map(pd.Series(np.array(SPLIT_NAMES)[assignments], index=group_counts.index))
