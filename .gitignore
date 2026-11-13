@@ -30,6 +30,9 @@ venv/
 # Data
 # =========================
 data/raw/
+# Raw dataset folders when unzipped at the repo root instead of data/raw
+QR_All_benign/
+QR_All_Malicious/
 data/processed/
 *.csv
 

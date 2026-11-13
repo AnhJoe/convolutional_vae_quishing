@@ -8,6 +8,12 @@ pandas>=2.2
 # Images (reading the QR PNG files)
 Pillow>=10.0
 
+# Processed tables (items.parquet)
+pyarrow>=15.0
+
+# Models (install the CUDA build for GPU training: https://pytorch.org/get-started/locally/)
+torch>=2.2
+
 # Visualization
 matplotlib>=3.8
 seaborn>=0.13
