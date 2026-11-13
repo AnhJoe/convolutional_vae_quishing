@@ -8,6 +8,9 @@ pandas>=2.2
 # Images (reading the QR PNG files)
 Pillow>=10.0
 
+# Models (image VAE and supervised reference). For a GPU, install the CUDA build: https://pytorch.org/get-started/locally/
+torch>=2.2
+
 # Visualization
 matplotlib>=3.8
 seaborn>=0.13

@@ -59,7 +59,8 @@ Command line (from the project root):
     python -m src.evaluate results/image_vae/neg_elbo/seed0 --scope canvas
     python -m src.evaluate results/url_vae/nll_per_char/seed0 --scope all
 
-Not built yet: bootstrap confidence intervals, strata tables, paired comparison with a floor, seed aggregation.
+Bootstrap confidence intervals, strata tables, the paired comparison with a floor and seed aggregation are in
+src/compare.py, which reads the same score files.
 """
 from __future__ import annotations
 
