@@ -78,7 +78,6 @@ outputs/reports/*.pdf
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-*.tex
 
 # =========================
 # Large files
@@ -87,6 +86,13 @@ outputs/reports/*.pdf
 *.zip
 *.tar
 *.gz
+
+# Keep NeurIPS report sources (and the compiled draft PDF) trackable
+!report/**/*.tex
+!report/**/*.sty
+!report/**/*.bib
+!report/main.pdf
+!report/275p Project Proposal.pdf
 
 # =========================
 # OS
